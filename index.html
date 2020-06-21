@@ -47,9 +47,17 @@
         evt.stopPropagation();
         evt.target.style.cursor = 'pointer';
     }
-
+       window.onkeydown =
+        function (event) {
+            // prevent web browser to open debug F12
+            if (event.keyCode == 123) {
+                event.preventDefault();
+                return false;
+            }
+        };
     document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
     document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
+
 
 </script>
 </html>
